@@ -36,10 +36,29 @@ end
 ```   
 Remove `, skip` if you want
 7. `kitchen verify centos`  
-8. Add extra content and save:  `code recipes/default.rb` 
+8. Add extra content and save:  `code recipes/default.rb`  
 ```
 package 'httpd'
 ```   
 10. `kitchen converge centos`
 11. `kitchen verify centos`
-10. `kitchen destroy`  
+
+12. Add content to default recipe again:  `code recipes/default.rb`   
+```
+# Start and enable the httpd service.
+service 'httpd' do
+  action [:enable, :start]
+end
+
+# Serve a custom home page.
+file '/var/www/html/index.html' do
+  content '<html>
+  <body>
+    <h1>hello world</h1>
+  </body>
+</html>'
+end
+```
+
+
+20. `kitchen destroy`  
