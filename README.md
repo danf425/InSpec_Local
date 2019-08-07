@@ -38,7 +38,9 @@ Remove `, skip` if you want
 7. `kitchen verify centos`  
 8. Add extra content and save:  `code recipes/default.rb`  
 ```
-package 'httpd'
+package 'httpd' do
+    action :install
+end
 ```   
 10. `kitchen converge centos`
 11. `kitchen verify centos`
