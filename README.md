@@ -27,7 +27,7 @@ describe http('http://localhost', enable_remote_worker: true) do
 end
 ```   
 8. `kitchen verify centos`  
-9. Fix it: `code ~/cookbooks/mynginx/recipes/default.rb`  
+9. Fix it: `code recipes/default.rb`  
 ```
 include_recipe 'nginx::repo'
 
