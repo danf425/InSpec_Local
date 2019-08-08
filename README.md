@@ -1,3 +1,7 @@
+## Short TDD Excersice 
+
+### Intent: Demonstrate the ease of using InSpec + Infra and test everything in a local box.
+
 1. Generate chef repo  
     `chef generate repo test`  
     `cd test`  
