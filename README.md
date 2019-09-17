@@ -66,4 +66,16 @@ end
 ```
 
 
+13. You can also do compliance from kitchen. Edit the `inspec_test` in `kitchen.yml` to :
+```
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+      #  - test/integration/default
+         - name: dev-sec/linux-baseline
+    attributes:
+```
+
+
 20. `kitchen destroy`  
