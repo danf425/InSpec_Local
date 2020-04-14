@@ -66,7 +66,11 @@ suites:
       inspec_tests:
       #  - test/integration/default
          - name: dev-sec/linux-baseline
-      #  - https://github.com/nathenharvey/tmp_compliance_profile
+      #  - https://github.com/nathenharvey/tmp_compliance_profile   
+      #  - name: ssh-hardening
+      #    url: https://github.com/dev-sec/tests-ssh-hardening
+      controls:
+         - sshd-46
  
     attributes:
 ```
