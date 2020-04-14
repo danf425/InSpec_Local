@@ -9,12 +9,12 @@
 2. Look at the structure of it through VSCode  
     `code .`  
     
-3. Show the kitchen yaml and explain how everything is functions. 
+3. Show the kitchen yaml, recipes, tests, explain how things function. 
    Comment out the ubuntu line... Converge.
    `kitchen converge centos`  
 
 4. Modify tests located in directory: `test/integration/default/default_test.rb`  
-   Explain the resources you are using... below are some examples:  
+   Explain the resources you are using... below are some testing examples (use the first 2):  
   
 ```
 # is apache httpd installed?
