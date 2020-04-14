@@ -7,9 +7,12 @@
     `cd webserver_test`  
 2. Look at the structure of it through VSCode  
     `code .`  
-4. Show the kitchen yaml... the structure of chef.... and converge the kitchen instance. 
+4. Show the kitchen yaml and explain how everything is functions. 
+   Probably comment out the ubuntu line... Converge.
    `kitchen converge centos`
-5. Modify tests: `code test/integration/default/default_test.rb`
+5. Modify tests located in directory: `test/integration/default/default_test.rb`
+   Explain the resources you are using... below are some examples:
+
 ```
 # is apache httpd installed?
 describe package('httpd') do
@@ -29,9 +32,10 @@ describe port(80) do
   it { should be_listening }
 end
 ```   
-Remove `, skip` in the example tests if you want
+
 7. `kitchen verify centos`  
-8. Add extra content and save:  `code recipes/default.rb`  
+
+8. Add content to default.rb so that we can begin seeing chef infra in action:  `recipes/default.rb`  
 ```
 package 'httpd' do
     action :install
@@ -40,7 +44,7 @@ end
 10. `kitchen converge centos`
 11. `kitchen verify centos`
 
-12. Add content to default recipe again:  `code recipes/default.rb`   
+12. Add more content to default recipe again:  `recipes/default.rb`   
 ```
 # Start and enable the httpd service.
 service 'httpd' do
@@ -58,7 +62,8 @@ end
 ```
 
 
-13. Now let's look at compliance. Edit the `inspec_test` in `kitchen.yml` to :
+13. Now let's look at compliance. Edit the `inspec_test` in `kitchen.yml` to any of the below:
+    Github integration is cool. Pulling compliance from a single source of truth. No excuses for shipping vulnerable infrastructure blahblahblah.
 ```
 suites:
   - name: default
@@ -74,11 +79,11 @@ suites:
  
     attributes:
 ```
-14. You can SSH into the kitchen instance to see that this isn't smoke and mirrors
+14. Optional: You can SSH into the kitchen instance to see that this isn't smoke and mirrors
  ``` kitchen ssh centos```
 
 
-15. Add data collector to report data to automate 
+15. Optional: Add data collector within `kitchen.yaml` to report data to automate: 
 ```
 provisioner:
   name: dokken
