@@ -2,21 +2,13 @@
 
 ### Intent: Demonstrate the ease of using InSpec + Infra and test everything in a local box.
 
-1. Generate chef repo  
-    `chef generate repo test`  
-    `cd test`  
-2. Generate chef cookbook (Creating a webserver) 
-    `chef generate cookbook cookbooks/webserver_test`  
-    `cd cookbooks/webserver_test`  
-3. Change chef version  
-    `code .kitchen.yml`  
-4. Change the `provisioner` line with below and save (Also, delete the ubuntu part):  
-```
-provisioner:
-  name: chef_zero
-  product_name: chef
-  product_version: 14.12.3
-```  
+1. Generate chef cookbook (Creating a webserver) 
+    `chef generate cookbook webserver_test`  
+    `cd webserver_test`  
+2. Look at it throw VSCode  
+    `code .`  
+4. Show the kitchen yaml... the structure of chef.... and converge the kitchen instance. 
+   `kitchen converge centos`
 5. Modify tests: `code test/integration/default/default_test.rb`
 ```
 # is apache httpd installed?
@@ -74,8 +66,11 @@ suites:
       inspec_tests:
       #  - test/integration/default
          - name: dev-sec/linux-baseline
+      #  - https://github.com/nathenharvey/tmp_compliance_profile
+ 
     attributes:
 ```
-
+14. You can SSH into the kitchen instance to see that this isn't smoke and mirrors
+ ``` kitchen ssh centos```
 
 20. `kitchen destroy`  
