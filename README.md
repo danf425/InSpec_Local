@@ -1,7 +1,6 @@
 ## TDD + Local Compliance Exercise  
 
-### Intent: Show value of Shifting left! Both in terms of Compliance and Integration Testing
-### Demonstrate the ease of using InSpec + Infra locally through a simple exercise.
+##### Intent: Show value of "shifting left" both in terms of Compliance and Integration Testing. Demonstrate the ease of using InSpec + Infra locally through a simple exercise.
 
 1. Generate chef cookbook (Creating a webserver)  
     `chef generate cookbook webserver_test`  
@@ -71,7 +70,7 @@ file '/var/www/html/index.html' do
 end
 ```
   
-### Cool, but what about local compliance?   
+##### Cool, but what about local compliance?   
   
 10. Edit the `inspec_test` in `kitchen.yml` to any of the below:
     Github integration is dope. Pulling compliance from a single source of truth. No excuses for shipping vulnerable infrastructure. Production ready as soon as it leaves your workstation. Buzzwords. blahblahblah.
