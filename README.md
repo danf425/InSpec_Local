@@ -5,7 +5,7 @@
 1. Generate chef cookbook (Creating a webserver) 
     `chef generate cookbook webserver_test`  
     `cd webserver_test`  
-2. Look at it throw VSCode  
+2. Look at the structure of it through VSCode  
     `code .`  
 4. Show the kitchen yaml... the structure of chef.... and converge the kitchen instance. 
    `kitchen converge centos`
@@ -58,7 +58,7 @@ end
 ```
 
 
-13. You can also do compliance from kitchen. Edit the `inspec_test` in `kitchen.yml` to :
+13. Now let's look at compliance. Edit the `inspec_test` in `kitchen.yml` to :
 ```
 suites:
   - name: default
