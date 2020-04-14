@@ -1,4 +1,4 @@
-## Short TDD Excersice 
+## Short TDD Exersice 
 
 ### Intent: Demonstrate the ease of using InSpec + Infra and test everything in a local box.
 
