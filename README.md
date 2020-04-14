@@ -77,4 +77,17 @@ suites:
 14. You can SSH into the kitchen instance to see that this isn't smoke and mirrors
  ``` kitchen ssh centos```
 
+
+15. Add data collector to report data to automate 
+```
+provisioner:
+  name: dokken
+  always_update_cookbooks: true
+  client_rb:
+    data_collector.server_url: 'https://np-eh-a2.chef-demo.com/data-collector/v0/'
+    data_collector.token: '61RpF2KmrtuNhqMnmH3jWUOsld0='
+    verify_api_cert: false
+    ssl_verify_mode: :verify_none
+```
+
 20. `kitchen destroy`  
