@@ -12,7 +12,7 @@ provisioner:
   require_ansible_repo: true
   ansible_verbose: true
   require_chef_for_busser: false
-  playbook: site.yml
+  playbook: ansible_httpd.yml
 
 transport:
   max_ssh_sessions: 6
