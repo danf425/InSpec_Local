@@ -1,3 +1,0 @@
-I, [2020-04-16T14:43:06.154164 #6004]  INFO -- Kitchen: -----> Starting Test Kitchen (v2.4.0)
-I, [2020-04-16T14:43:08.000251 #6004]  INFO -- Kitchen: -----> Verifying <default-centos-7>...
-I, [2020-04-16T14:43:08.864951 #6004]  INFO -- Kitchen: -----> Test Kitchen is finished. (0m2.71s)

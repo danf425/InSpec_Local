@@ -1,3 +1,0 @@
-I, [2020-04-16T14:43:08.000316 #6004]  INFO -- default-centos-7: -----> Verifying <default-centos-7>...
-I, [2020-04-16T14:43:08.419660 #6004]  INFO -- default-centos-7: Loaded tests from {:path=>".Users.dmontanez.Demos.InSpec_Local.ansible.test.integration.default"} 
-I, [2020-04-16T14:43:08.864738 #6004]  INFO -- default-centos-7: Finished verifying <default-centos-7> (0m0.86s).
