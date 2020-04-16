@@ -1,3 +1,5 @@
+###### Running the Tests:
+
 0. Make sure you are within the `chef` folder
 
 1. `kitchen converge`  
