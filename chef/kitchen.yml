@@ -1,0 +1,31 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  # always_update_cookbooks: true
+  # client_rb:
+  #   data_collector.server_url: 'https://np-eh-a2.chef-demo.com/data-collector/v0/'
+  #   data_collector.token: '61RpF2KmrtuNhqMnmH3jWUOsld0='
+  #   verify_api_cert: false
+  #   ssl_verify_mode: :verify_none
+
+verifier:
+  name: inspec
+
+platforms:
+#  - name: ubuntu-18.04
+  - name: centos-7
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+      #  - test/integration/default
+         - name: dev-sec/linux-baseline
+      #  - https://github.com/nathenharvey/tmp_compliance_profile   
+      #  - name: ssh-hardening
+      #    url: https://github.com/dev-sec/tests-ssh-hardening
+      controls:
+         - sshd-46
