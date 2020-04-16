@@ -1,14 +1,14 @@
-Make sure kitchen, vagrant, inspec, and ansible are installed
+Make sure vagrant and the chef worstation are installed
 
-Installing ansible on a mac:
-```brew install ansible```
+###### Pre Reqs:
+- Install kitchen-ansible gem file: `chef gem install kitchen-ansible`  
 
-Install kitchen-ansible gem file:
-```chef gem install kitchen-ansible```
 
-0. Make sure you are within the `ansible` folder
+###### Running the Tests:
 
-1. `kitchen converge`  
+0. Make sure you are within the `ansible` folder  
+
+1. `kitchen converge`
 
 2. `kitchen verify`  
 

@@ -1,6 +1,6 @@
 ## TDD + Local Compliance Exercise  
 ##### Intent: Show value of "shifting left" both in terms of Compliance and Integration Testing. Demonstrate the ease of using InSpec + Infra locally through a simple exercise.
-##### Follow these steps by step instructions for Chef Infra. Otherwise, go to the Ansible or Chef dirs for ready to go instances.
+##### Follow these steps by step instructions for Chef Infra. For ready-to-go instances, go to the Ansible, Puppet, or Chef dirs
 
 
 
