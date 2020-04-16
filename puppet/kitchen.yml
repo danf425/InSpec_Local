@@ -3,13 +3,26 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: puppet_apply
+  manifests_path: manifests
+  modules_path: modules
+  puppet_verbose: true
+  require_chef_for_busser: false
+
+verifier:
+  name: inspec
 
 platforms:
-  - name: ubuntu-18.04
+#  - name: ubuntu-18.04
   - name: centos-7
 
 suites:
   - name: default
-    run_list:
-    attributes:
+    verifier:
+      inspec_tests:
+        - test/integration/default
+        # - https://github.com/nathenharvey/tmp_compliance_profile   
+        # - name: ssh-hardening
+        #   url: https://github.com/dev-sec/tests-ssh-hardening
+      # controls:
+      #   - sshd-46
