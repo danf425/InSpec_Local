@@ -1,0 +1,37 @@
+---
+driver:
+  name: vagrant
+
+# provisioner:
+#   name: chef_zero
+
+# Ansible Part
+provisioner:
+  hosts: test-kitchen
+  name: ansible_playbook
+  require_ansible_repo: true
+  ansible_verbose: true
+  require_chef_for_busser: false
+  playbook: site.yml
+
+transport:
+  max_ssh_sessions: 6
+
+# Rest is the same
+verifier:
+  name: inspec
+
+platforms:
+#  - name: ubuntu-18.04
+  - name: centos-7
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+        # - https://github.com/nathenharvey/tmp_compliance_profile   
+        # - name: ssh-hardening
+        #   url: https://github.com/dev-sec/tests-ssh-hardening
+      # controls:
+      #   - sshd-46
