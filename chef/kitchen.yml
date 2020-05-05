@@ -4,12 +4,12 @@ driver:
 
 provisioner:
   name: chef_zero
-  # always_update_cookbooks: true
-  # client_rb:
-  #   data_collector.server_url: 'https://np-eh-a2.chef-demo.com/data-collector/v0/'
-  #   data_collector.token: '61RpF2KmrtuNhqMnmH3jWUOsld0='
-  #   verify_api_cert: false
-  #   ssl_verify_mode: :verify_none
+  always_update_cookbooks: true
+  client_rb:
+    data_collector.server_url: 'https://a2-local-inplace-upgrade-acceptance.cd.chef.co/data-collector/v0/'
+    data_collector.token: 'p1BnuTlMuLHkrjxf3ml1HwWofgs='
+    verify_api_cert: false
+    ssl_verify_mode: :verify_none
 
 verifier:
   name: inspec
@@ -19,13 +19,27 @@ platforms:
   - name: centos-7
 
 suites:
-  - name: default
+  - name: local
     verifier:
       inspec_tests:
-      #  - test/integration/default
-         - name: dev-sec/linux-baseline
+       - test/integration/default
+      #  - name: dev-sec/linux-baseline
       #  - https://github.com/nathenharvey/tmp_compliance_profile   
       #  - name: ssh-hardening
       #    url: https://github.com/dev-sec/tests-ssh-hardening
-      controls:
-         - sshd-46
+      #  - name: os-hardening
+      #    git: https://github.com/dev-sec/tests-os-hardening.git
+      # controls:
+      #    - sshd-46   
+
+      
+
+
+
+
+
+    # attributes:   
+    #   reporter:
+    #     automate:
+    #       url: 'https://a2-local-inplace-upgrade-acceptance.cd.chef.co/data-collector/v0/'
+    #       token: 'N3RUNdCtPOGsdBskyjLX74Xicns='

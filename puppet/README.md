@@ -1,5 +1,4 @@
-Make sure kitchen, vagrant, inspec, and ansible are installed
-NOT WORKING! 
+Make sure vagrant and the chef worstation are installed
 
 ###### Pre Reqs:
 - Install kitchen-ansible gem file: `chef gem install kitchen-puppet`  

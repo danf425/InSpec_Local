@@ -1,0 +1,12 @@
+---
+resources:
+  - type: "package"
+    name: "httpd"
+  - type: "template"
+    name: "/var/www/html/index.html"
+    source: "index.html.erb"
+  - type: "service"
+    name: "httpd"
+    action:
+      - enable
+      - start

@@ -11,7 +11,7 @@ provisioner:
 
 verifier:
   name: inspec
-
+  
 platforms:
 #  - name: ubuntu-18.04
   - name: centos-7
@@ -21,6 +21,7 @@ suites:
     verifier:
       inspec_tests:
         - test/integration/default
+        # - name: dev-sec/linux-baseline
         # - https://github.com/nathenharvey/tmp_compliance_profile   
         # - name: ssh-hardening
         #   url: https://github.com/dev-sec/tests-ssh-hardening
