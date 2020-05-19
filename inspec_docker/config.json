@@ -1,0 +1,17 @@
+{
+    "version": "1.1",
+    "cli_options":{
+        "color": "true"
+    },
+    "reporter": {
+        "automate" : {
+            "stdout" : true,
+            "url" : "https://danflores.chef-demo.com/data-collector/v0/",
+            "token" : "GyJ914G3x70D_GOZcY_CyDC7640=",
+            "insecure" : false,
+            "node_name" : "docker:nginx",
+            "node_uuid" : "123e4567-e89b-12d3-a456-426614174000",
+            "environment" : "prod"
+        }
+    }
+}
