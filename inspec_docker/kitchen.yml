@@ -1,0 +1,32 @@
+---
+driver:
+  name: dokken
+  chef_version: latest
+  privileged: true
+  volumes: [ '/var/lib/docker' ]
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+  always_update_cookbooks: true
+  client_rb:
+    data_collector.server_url: 'https://danflores.chef-demo.com/data-collector/v0/'
+    data_collector.token: 'GyJ914G3x70D_GOZcY_CyDC7640='
+    verify_api_cert: false
+    ssl_verify_mode: :verify_none
+
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
