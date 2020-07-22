@@ -1,12 +1,20 @@
 ---
 resources:
-  - type: "package"
-    name: "httpd"
-  - type: "template"
-    name: "/var/www/html/index.html"
-    source: "index.html.erb"
-  - type: "service"
-    name: "httpd"
-    action:
+  - type: package
+    name: httpd
+    action: install
+  - type: service
+    name: httpd
+    action: 
       - enable
       - start
+  - type: template
+    name: /var/www/html/index.html
+    source: index.html.erb
+  - type: kernel_module
+    name: cramfs
+    action: 
+      - blacklist
+      - disable
+      - unload
+  
